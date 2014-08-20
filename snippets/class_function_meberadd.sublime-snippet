@@ -1,0 +1,5 @@
+<snippet>
+    <content><![CDATA[${1:${TM_FILENAME/(.+)\..+|.*/$1/:name}}::]]></content>
+    <tabTrigger>cc</tabTrigger>
+    <scope>source.c++, source.objc++, source.c++11</scope>
+</snippet>

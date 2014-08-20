@@ -1,0 +1,26 @@
+<snippet>
+    <content><![CDATA[#ifndef __${1:${TM_FILENAME/(.+)\..+|.*/$1/:name}}
+#define __${1:${TM_FILENAME/(.+)\..+|.*/$1/:name}}
+
+class ${1:${TM_FILENAME/(.+)\..+|.*/$1/:name}} 
+{
+private:
+	${2:/* data */}
+public:
+	static ${1/(\w+).*/$1/}& getInstance(void){
+		static ${1/(\w+).*/$1/}    instance;
+		return instance;
+	};
+	${1/(\w+).*/$1/}(${3:/* args */});
+	~${1/(\w+).*/$1/}();
+    ${1/(\w+).*/$1/}(${1/(\w+).*/$1/} const&);      // Don't Implement
+    void operator=(${1/(\w+).*/$1/} const&);    // Don't implement
+};
+
+
+#endif
+
+]]></content>
+    <tabTrigger>csingletonclass</tabTrigger>
+    <scope>source.c++, source.objc++, source.c++11</scope>
+</snippet>

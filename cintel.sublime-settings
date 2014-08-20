@@ -1,0 +1,23 @@
+{
+
+    "enabled" : false,
+    "auto_rebuild_on_save" : true,
+
+    // Default read/write location of the tags file
+    "tag_file" : ".tags",
+
+    //Default location for running ctag command
+    "default_path" : ".",
+
+    "inClass_autocomplete" : true,
+    "inClass_add_sublime_tags" : true,
+    "inClass_add_sublime_tags_all_opened" : true,
+
+    //EXTERNAL libs included in cintel in simplified form
+    "stl_containers": true,
+
+
+    //external libs
+    //"external": ["/home/user/mylib/lib*.h", "/usr/lib/opengl.h"]
+    "external": []
+}

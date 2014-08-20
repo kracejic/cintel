@@ -1,0 +1,20 @@
+<snippet>
+    <description>Regular function</description>
+    <content><![CDATA[#include "${TM_FILENAME/(.+)\..+|.*/$1/:name}.h"
+
+
+${TM_FILENAME/(.+)\..+|.*/$1/:name}::${TM_FILENAME/(.+)\..+|.*/$1/:name}(${3:/* args */}) 
+{
+	${4:/* code */}
+}
+//-----------------------------------------------------------------------------------
+${TM_FILENAME/(.+)\..+|.*/$1/:name}::~${TM_FILENAME/(.+)\..+|.*/$1/:name}() 
+{
+	${5:/* code */}
+}
+//-----------------------------------------------------------------------------------
+
+]]></content>
+    <tabTrigger>construct</tabTrigger>
+    <scope>source.c, source.objc, source.c++, source.objc++, source.c++11</scope>
+</snippet>

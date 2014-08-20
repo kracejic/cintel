@@ -1,0 +1,10 @@
+[
+  {
+    "caption": "Cintel: Rebuild database",
+    "command": "rebuild"
+  },
+  {
+    "caption": "Cintel: Create C++ file from header",
+    "command": "createcfilefromheader"
+  },
+]

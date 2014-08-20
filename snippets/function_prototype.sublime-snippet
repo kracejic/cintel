@@ -1,0 +1,8 @@
+<snippet>
+    <description>While loop</description>
+    <content><![CDATA[std::string ${1:name}(${2:void});
+
+]]></content>
+    <tabTrigger>sf</tabTrigger>
+    <scope>source.c, source.objc, source.c++, source.objc++, source.c++11</scope>
+</snippet>

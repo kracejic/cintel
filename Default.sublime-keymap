@@ -1,0 +1,6 @@
+[
+  {
+    "command": "rebuild",
+    "keys": ["ctrl+t", "ctrl+r"]
+  },
+]

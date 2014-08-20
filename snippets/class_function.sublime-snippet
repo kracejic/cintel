@@ -1,0 +1,12 @@
+<snippet>
+    <description>Regular function</description>
+    <content><![CDATA[${1:void} ${TM_FILENAME/(.+)\..+|.*/$1/:name}::${2:function_name}(${3:void}) 
+{
+	${0:/* code */}
+}
+//-----------------------------------------------------------------------------------
+
+]]></content>
+    <tabTrigger>cfun</tabTrigger>
+    <scope>source.c, source.objc, source.c++, source.objc++, source.c++11</scope>
+</snippet>
