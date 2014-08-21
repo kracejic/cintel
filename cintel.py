@@ -798,7 +798,7 @@ class SmartAutocompleteCtags():
         self.rebuilding = True
         print("\n---------REBUILDING---------")
         self.timeOfLastRefresh = time.time()
-        startTime = time.clock()
+        startTime = time.time()
 
 
         self.clearMemory()
@@ -853,8 +853,7 @@ class SmartAutocompleteCtags():
             except Exception as err:
                 print ("CINTEL ERROR: External LIBS\n" + traceback.format_exc() )
                 
-
-        print("- rebuild time was: %.2f ms" % (time.clock() - startTime) )
+        print("- rebuild time was: %.2f s" % (time.time() - startTime) )
         print("----------------------------")
 
         self.rebuilding = False
