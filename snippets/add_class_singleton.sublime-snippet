@@ -1,0 +1,14 @@
+<snippet>
+	<description>Adds function for singleton</description>
+	<content><![CDATA[static ${1:${TM_FILENAME/(.+)\..+|.*/$1/:name}}& getInstance(void){
+	static ${1/(\w+).*/$1/}    instance;
+	return instance;
+};
+${1/(\w+).*/$1/}(${1/(\w+).*/$1/} const&);      // Don't Implement
+void operator=(${1/(\w+).*/$1/} const&);    // Don't implement
+
+
+]]></content>
+	<tabTrigger>addsingleton</tabTrigger>
+	<scope>source.c++, source.objc++, source.c++11</scope>
+</snippet>

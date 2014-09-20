@@ -666,18 +666,18 @@ class SmartAutocompleteCtags():
         if len(items) < 1:
             return parrent
 
-        if parrent.retInstanceOf in self.hashed:
+        if parrent.retInstanceOf in self.onlyClasses:
             if items[0] in self.byParentClass[parrent.retInstanceOf]:
                 print ("  +-Item: " + self.byParentClass[parrent.retInstanceOf][items[0]].text)
 
                 print ("    return=" + self.byParentClass[parrent.retInstanceOf][items[0]].retInstanceOf )
-                print ("    templa=" + self.hashed[parrent.retInstanceOf][0].template )
+                print ("    templa=" + self.onlyClasses[parrent.retInstanceOf].template )
                 print ("    inTemp=" + parrent.template )
 
 
-                if self.hashed[parrent.retInstanceOf][0].template == self.byParentClass[parrent.retInstanceOf][items[0]].retInstanceOf and parrent.template in self.hashed:
-                    print ("    MATCH")
-                    return self.recursiveSearchOptions(items[1:], self.hashed[parrent.template][0])
+                if self.onlyClasses[parrent.retInstanceOf].template == self.byParentClass[parrent.retInstanceOf][items[0]].retInstanceOf and parrent.template in self.onlyClasses:
+                    print ("    MATCH = " + self.onlyClasses[parrent.template].text)
+                    return self.recursiveSearchOptions(items[1:], self.onlyClasses[parrent.template])
                 print ("    NO")
                 
                 return self.recursiveSearchOptions(items[1:], self.byParentClass[parrent.retInstanceOf][items[0]])
@@ -712,9 +712,10 @@ class SmartAutocompleteCtags():
         
         inherited = self.getAllInheritedClasses(where)
         for x in inherited:
-            if item in self.byParentClass[x]:
-                print ("  found:" + self.byParentClass[x][item].name)
-                return self.byParentClass[x][item]
+            if x in self.byParentClass:
+                if item in self.byParentClass[x]:
+                    print ("  found:" + self.byParentClass[x][item].name)
+                    return self.byParentClass[x][item]
             
         if item.find("::") != -1:
             s = item.split("::")
@@ -867,6 +868,16 @@ smComplete = SmartAutocompleteCtags()
 class RebuildCommand(sublime_plugin.TextCommand):
     def run(self, edit):  
         smComplete.rebuild(self.view)
+      
+
+class CustomactionCommand(sublime_plugin.TextCommand):
+    def run(self, edit):  
+        cmd = get_setting("custom_action",self.view)
+        for item in cmd:
+            print("1 = " + str(item))
+            subprocess.call(item, shell=True)
+            print("2 = " + str(item.split()))
+
       
 
         

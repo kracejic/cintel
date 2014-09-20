@@ -3,4 +3,8 @@
     "command": "rebuild",
     "keys": ["ctrl+t", "ctrl+r"]
   },
+  {
+    "command": "customaction",
+    "keys": ["ctrl+t", "ctrl+t"]
+  },
 ]

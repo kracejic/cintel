@@ -31,6 +31,7 @@ public:
     void pop_back();
 
     ValueType& operator[](size_type n);
+    ValueType& back();
 
     iterator insert(const_iterator position, const ValueType& x);
     iterator insert(const_iterator position, ValueType&& x);
@@ -47,4 +48,16 @@ public:
 template <typename ValueType> class map {
 public:
     ValueType& operator[](size_type n);
+    bool empty();
+    size_type size();
+
+    iterator insert(const_iterator position, ValueType&& x);
+    iterator insert(ValueType&& x);
+
+    iterator  erase (const_iterator position);
+    size_type erase (const key_type& k);
+    iterator  erase (const_iterator first, const_iterator last);
+
+    iterator find (const key_type& k);
+    size_type count (const key_type& k);
 };
