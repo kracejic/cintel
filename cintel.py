@@ -301,6 +301,8 @@ class SmartAutocompleteCtags():
                 # print (item.name+ " - "+ item.inClass)
             if splited[5][0:4] == "struct"[0:4]:
                 item.inClass = splited[5].strip().replace("struct:", "")
+            if splited[5][0:4] == "union"[0:4]:
+                item.inClass = splited[5].strip().replace("union:", "").split("::")[0]
                 # print (item.name+ " - "+ item.inClass)
             if splited[5][0:4] == "enum"[0:4]:
                 item.inenum = splited[5].strip().replace("enum:", "")
