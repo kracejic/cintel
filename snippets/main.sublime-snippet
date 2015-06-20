@@ -1,17 +1,17 @@
 <snippet>
-    <description>Cpp ectended Main</description>
+    <description>Cpp extended Main</description>
     <content><![CDATA[#include <vector>
 #include <string>
 #include <iostream>
 #include <stdio.h>
 
-//g++ classtest.cc  -std=c++11 && ./a.exe
+//g++ ${1:${TM_FILENAME}}  -std=c++11 -o a.exe && ./a.exe
 
 using namespace std;
 
 int main(int argc, char const *argv[])
 {
-    ${1:cout<<"hello world!"<<endl;}
+    ${2:cout<<"hello world!"<<endl;}
     return 0;
 }
 

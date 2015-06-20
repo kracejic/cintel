@@ -1,0 +1,7 @@
+<snippet>
+    <description>shared_ptr</description>
+    <content><![CDATA[std::shared_ptr<${1:int}> ${2:name};
+]]></content>
+    <tabTrigger>sp</tabTrigger>
+    <scope>source.c, source.objc, source.c++, source.objc++, source.c++11</scope>
+</snippet>
