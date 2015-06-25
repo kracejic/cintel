@@ -1,0 +1,7 @@
+<snippet>
+    <description>unsigned int</description>
+    <content><![CDATA[unsigned int ${1:}
+]]></content>
+    <tabTrigger>ui</tabTrigger>
+    <scope>source.c, source.objc, source.c++, source.objc++, source.c++11</scope>
+</snippet>
